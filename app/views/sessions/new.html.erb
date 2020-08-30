@@ -1,0 +1,28 @@
+html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-image: url('https://www.lefthudson.com/wp-content/uploads/2019/11/gameboy-wallpapers-beautiful-gameboy-wallpaper-79-images-ideas-of-gameboy-wallpapers.jpg');"> 
+<CENTER> 
+<h1>Sign in to your Game Review Account</h1>
+
+<%= link_to('Log in with Facebook!', '/auth/facebook') %>
+
+<p>Or, login to your account below:</p>
+
+<%= form_tag sessions_path do %>
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
+
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <br><br>
+
+  <%= submit_tag "Sign In" %>
+<% end %>
+
+<% if flash[:message] %>
+  <p><%= flash[:message] %></p>
+<% end %>
+</CENTER>
+</body>

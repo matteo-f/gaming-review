@@ -1,0 +1,18 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<CENTER>
+<body style="background-image: url('https://www.lefthudson.com/wp-content/uploads/2019/11/gameboy-wallpapers-beautiful-gameboy-wallpaper-79-images-ideas-of-gameboy-wallpapers.jpg');"> 
+<% if review.errors.any? %>
+  <div>
+    <%= pluralize(review.errors.count, "error") %>:
+    <ul>
+      <% review.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+</CENTER>
+</body>

@@ -1,0 +1,27 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<CENTER>
+<body style="background-image: url('https://www.lefthudson.com/wp-content/uploads/2019/11/gameboy-wallpapers-beautiful-gameboy-wallpaper-79-images-ideas-of-gameboy-wallpapers.jpg');"> 
+<%= form_for(@review) do |f| %>
+  <%= f.label "Pick or create a game:" %>
+  <%= f.text_field :game_name, :list => "games_autocomplete" %>
+  <datalist id="games_autocomplete">
+    <% Game.alphabetical.each do |game| %>
+      <option value="<%= game.name %>">
+    <% end %>
+  </datalist><br>
+  <%= f.label :title %><br>
+  <%= f.text_field :title, :size => "52" %><br>
+  <br>
+  <%= f.label :content %><br>
+  <%= f.text_area :content, :cols => "50", :rows => "10" %>
+  <br>
+  <%= f.label "Final Score (between 1-100):" %>
+  <%= f.text_field :score %>
+  <br><br>
+  <%= f.submit %>
+<% end %>
+</CENTER>
+</body>

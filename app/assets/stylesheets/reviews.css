@@ -1,0 +1,13 @@
+/* // Place all the styles related to the Reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/ */
+
+
+
+p#review_timestamp {
+  font-size: .75em;
+}
+
+hr {
+	border-top: 3px double #8c8b8b;
+}

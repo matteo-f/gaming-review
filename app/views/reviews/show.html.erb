@@ -1,0 +1,36 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<CENTER>
+<body style="background-image: url('https://www.lefthudson.com/wp-content/uploads/2019/11/gameboy-wallpapers-beautiful-gameboy-wallpaper-79-images-ideas-of-gameboy-wallpapers.jpg');"> 
+
+<h1><%= @review.title %> (<%= @review.game.name %>)</h1>
+
+<% if flash[:message] %>
+  <p><%= flash[:message] %></p>
+<% end %>
+
+<p class="content"><%= @review.content %></p>
+<p>Score: <%= @review.score %>/100</p>
+<p id="review_timestamp">
+  Written on: <%= friendly_time(@review.created_at) %>
+</p>
+<% unless @review.created_at == @review.updated_at %>
+  <p id="review_timestamp">
+    Edited on: <%= friendly_time(@review.updated_at) %>
+  </p>
+<% end %>
+<hr>
+<% if @review.user == @current_user %>
+  <br>
+  <%= link_to "Edit your review", edit_user_review_path(@review.user, @review) %><br>
+  <%= link_to "Delete your review", review_path(@review), :method => :delete %><br>
+<% end %>
+
+<br>
+<%= link_to "Write a new review", new_user_review_path(@current_user) %><br>
+<%= render "layouts/footnote" %>
+
+</CENTER>
+</body>

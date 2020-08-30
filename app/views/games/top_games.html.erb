@@ -1,0 +1,21 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<CENTER>
+<body style="background-image: url('https://www.lefthudson.com/wp-content/uploads/2019/11/gameboy-wallpapers-beautiful-gameboy-wallpaper-79-images-ideas-of-gameboy-wallpapers.jpg');"> 
+<h1>Top 10 Games</h1>
+
+<ul>
+  <% @top_games.each do |game| %>
+    <div>
+      <li>
+        <%= link_to game.name, game_path(game) %> (average score: <%= game.avg_score %>)
+      </li>
+    </div>
+  <% end %>
+</ul>
+
+<%= render 'layouts/footnote' %>
+<CENTER>
+</body>

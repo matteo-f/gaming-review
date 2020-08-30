@@ -1,0 +1,22 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<CENTER>
+<body style="background-image: url('https://www.lefthudson.com/wp-content/uploads/2019/11/gameboy-wallpapers-beautiful-gameboy-wallpaper-79-images-ideas-of-gameboy-wallpapers.jpg');"> 
+<h1><%= @user.username %> Page</h1>
+<h3><%= @user.username %> reviews:</h3>
+<ul>
+  <% @user.reviews.each do |review| %>
+    <div>
+      <%= link_to review.title, user_review_path(review.user, review) %>
+    </div>
+  <% end %>
+</ul>
+<br><br>
+
+<%= link_to "Write a new review", new_user_review_path(@current_user) %><br>
+<%= link_to "Return to index", homepage_path %><br>
+<%= link_to 'Log Out', logout_path %>
+</CENTER>
+</body>
